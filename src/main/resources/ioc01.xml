@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="bookdao" class="com.jason.dao.BookDaoMySQL"></bean>
+    <bean name="bookSpring" class="com.jason.model.Book">
+        <constructor-arg name="book_Id" value="987"></constructor-arg>
+        <constructor-arg name="book_title" value="Spring高級"></constructor-arg>
+        <constructor-arg name="book_typename" value="軟體工程"></constructor-arg>
+        <constructor-arg name="book_price" value="68"></constructor-arg>
+        <constructor-arg name="book_state" value="未借出"></constructor-arg>
+    </bean>
+    <bean name="bookMVC" class="com.jason.model.Book" scope="prototype">
+        <property name="book_title" value="Spring MVC"></property>
+        <property name="book_price" value="78"></property>
+    </bean>
+</beans>
